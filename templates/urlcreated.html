@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="alert alert-info" role="alert">
+        <h1> 
+            <a href="http://127.0.0.1:8000/{{chars}}">URL Corta: "short.cpe.gov.co/{{ chars }}" </a>
+    </div>
+    <div class="alert alert-warning" role="alert">
+        <h1> short.cpe.gov.co/{{ chars }} </h1>
+    </div>
+</center>
+{% endblock content %}

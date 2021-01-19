@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <center>
+    <div class="alert alert-info" role="alert">
+        <h2>URL Orginal: "{{ obj.original_url }}"</h2>
+        <h4>URL Corta: "{{ obj.short_url }}"</h4>
+        <a href="{{ obj.original_url }}"><button id="buttonpage" type="buttonpage" class="btn btn-primary">Ir al sitio</button></a>
+    </div>
+    </center>
+
+    <script>
+        setTimeout(
+            function(){ 
+                window.location="{{ obj.original_url }}"; 
+            }, 3000);
+    </script>
+
+{% endblock content %}

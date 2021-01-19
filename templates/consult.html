@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin: 2%; zoom: 80%;">
+    <div class="row">
+        <div class="col-">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    URls Registradas
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class=".col-">
+                            <table id="tabla" class="table table-striped table-bordered" cellspacing="0" width="auto">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">URL Original</th>
+                                        <th class="text-center">URL Corta</th>
+                                        <th class="text-center">Descripción</th>
+                                        <th class="text-center">Fecha y Hora</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if urls %}
+                                    {% for data in urls%}
+                                    <tr>
+                                        <td>{{ data.original_url }}</td>
+                                        <td>{{ data.short_url }}</td>
+                                        <td>{{ data.description }}</td>
+                                        <td>{{ data.time_date_created }}</td>                                                                      
+                                    </tr>
+                                {% endfor %}
+
+                                {% else %}
+                                        <h1> No hay URLs registradas</h1> 
+                        
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() 
+    {   
+        var table = $('#tabla').DataTable( {
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+            },
+        } );
+    });
+    </script>
+{% endblock content %}
+

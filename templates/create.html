@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="/create/">
+        <div align="center">
+            <img src="https://github.com/MiguelAndres03/acortador-urls/blob/master/TICO.png?raw=true" width="100"
+                        height="auto" alt="" loading="lazy">
+        </div>
+        <div class="jumbotron" style="background-color: white;" >
+            <h6 align="left" style="color: #004884;">*Porfavor llena los campos</h6>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <center><button id="buttonpage" type="submit" class="btn btn-primary">Crear URL</button></center>
+        </div>
+    </form>
+</div>
+{% endblock content %}
