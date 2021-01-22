@@ -1,4 +1,5 @@
 from .models import ShortURL
+from django.contrib.auth.models import User
 from django import forms
 
 class CreateNewShortURL(forms.ModelForm):
