@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'shorty_db',
         'USER': 'root',
         'PASSWORD': '12345',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '3306'
     }
 }
