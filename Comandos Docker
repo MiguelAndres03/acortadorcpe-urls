@@ -1,0 +1,12 @@
+#Ejecuta el Dockerfile
+docker-compose build
+Sube la copia
+docker-compose up -d
+
+#ejecuta la migracion de db
+docker-compose run web python manage.py migrate
+
+docker-compose run web python manage.py loaddata db.json
+
+miguelandres03
+miguel12345
